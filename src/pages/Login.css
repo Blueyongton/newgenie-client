@@ -1,0 +1,74 @@
+/* src/pages/Login.css */
+.login-page {
+    min-height: 100vh;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 520px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    padding: 44px 40px;
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  
+  .brand {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  
+  .subtitle {
+    margin-top: 10px;
+    color: #6b7280;
+    font-size: 15px;
+  }
+  
+  .kakao-btn {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 12px;
+    background: #FEE500;
+    color: #111827;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  
+    transition: transform 0.05s ease, filter 0.15s ease;
+  }
+  
+  .kakao-btn:hover {
+    filter: brightness(0.98);
+  }
+  
+  .kakao-btn:active {
+    transform: translateY(1px);
+  }
+  
+  .kakao-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+  
+  .login-footer {
+    margin-top: 18px;
+    text-align: center;
+    color: #9ca3af;
+  }
+  
