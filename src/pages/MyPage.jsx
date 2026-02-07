@@ -88,14 +88,10 @@ const MyPage = () => {
             {isEditing ? (
               <DailyGoalEdit>
                 <input
-                  type="number"
-                  min={1}
-                  max={50}
+                  type="input"
                   value={dailyGoal}
                   onChange={(e) =>
-                    setDailyGoal(
-                      Math.min(50, Math.max(1, Number(e.target.value) || 1))
-                    )
+                    setDailyGoal(e.target.value)
                   }
                 />
                 <span>편</span>
