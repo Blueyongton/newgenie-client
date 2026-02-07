@@ -6,7 +6,7 @@ import { FiLink } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 
-export default function HomeLanding({ onClickArrow = () => {}, onClickMyPage = () => {}  }) {
+export default function HomeLanding() {
   const [url, setUrl] = useState("");
 
   const handleSubmit = () => {
