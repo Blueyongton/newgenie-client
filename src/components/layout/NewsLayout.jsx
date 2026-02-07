@@ -32,5 +32,5 @@ const ContentWrapper = styled.main`
   background: white;
   border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 12px rgba(21, 63, 141, 0.08);
 `;
