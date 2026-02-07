@@ -6,6 +6,7 @@ import HomeLanding from "./pages/HomeLanding";
 import NewsReadingPage from './pages/NewsReadingPage';
 import MyPage from './pages/MyPage';
 import GoalSettingPage from './pages/GoalSettingPage';
+import QuizPage from './pages/QuizPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/news" element={<NewsReadingPage />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/goals" element={<GoalSettingPage />} />
+          <Route path="/quiz" element={<QuizPage />} />
         </Routes>
       </Main>
     </BrowserRouter>
