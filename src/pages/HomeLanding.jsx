@@ -1,38 +1,38 @@
 // src/pages/HomeLanding.jsx
 import { useState } from "react";
 import "./HomeLanding.css";
+import { FiArrowRight } from "react-icons/fi";
+import { FiLink } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+
 
 export default function HomeLanding({ onClickArrow = () => {}, onClickMyPage = () => {}  }) {
   const [url, setUrl] = useState("");
 
   const handleSubmit = () => {
     const trimmed = url.trim();
-    if (!trimmed) return; 
-    onClickArrow(trimmed);
+    if (!trimmed) return;
+  
+    // 지금은 "로그아웃 상태"라 했으니 바로 로그인으로 보냄
+    navigate("/login");
   };
+  
+
+  const navigate = useNavigate();
+
 
   return (
     <div className="page">
-      <aside className="sidebar">
-        <div className="logo">NewGenie</div>
-
-        <button
-            className="myPageBtn"
-            type="button"
-            onClick={() => onClickMyPage()}
-            >
-
-          <span className="myPageDot" />
-          <span>마이페이지</span>
-        </button>
-      </aside>
 
       <main className="main">
         <section className="inputSection">
           <h1 className="headline">어떤 기사를 요약할까요?</h1>
 
           <div className="inputBox">
-            <div className="leftIcon" aria-hidden="true">★</div>
+          <div className="leftIcon" aria-hidden="true">
+            <FiLink size={16} />
+          </div>
+
 
             <input
               className="urlInput"
@@ -45,21 +45,13 @@ export default function HomeLanding({ onClickArrow = () => {}, onClickMyPage = (
             />
 
             <button
-              className={`submitBtn ${url.trim() ? "active" : ""}`}
-              type="button"
-              aria-label="요약하기"
-              onClick={handleSubmit}
-              disabled={!url.trim()}
+                className={`submitBtn ${url.trim() ? "active" : ""}`}
+                type="button"
+                aria-label="요약하기"
+                onClick={handleSubmit}
+                disabled={!url.trim()}
             >
-              <svg
-                className="arrowIcon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M5 12H18" stroke="white" strokeWidth="2.6" strokeLinecap="round" />
-                <path d="M13 7L18 12L13 17" stroke="white" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+                <FiArrowRight size={30} color="black" />
             </button>
           </div>
         </section>
