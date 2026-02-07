@@ -1,12 +1,19 @@
-import axios from 'axios';
+// src/apis/axiosConfig.js
+import axios from "axios";
 
-const API_BASE = process.env.REACT_APP_API_URL || '';
+const baseURL =
+  process.env.REACT_APP_API_BASE_URL || "http://3.35.8.84:3000";
 
-export const getAuthAxios = (token) => {
-  return axios.create({
-    baseURL: API_BASE,
-    headers: {
-      ...(token && { Authorization: `Bearer ${token}` }),
-    },
-  });
+const api = axios.create({ baseURL });
+
+export const getAuthAxios = () => {
+  const token = localStorage.getItem("token");
+  const instance = axios.create({ baseURL });
+
+  if (token) {
+    instance.defaults.headers.Authorization = `Bearer ${token}`;
+  }
+  return instance;
 };
+
+export default api;

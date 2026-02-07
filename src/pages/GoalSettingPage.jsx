@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { createGoals } from "../apis/goalsApi";
 
 const INTEREST_OPTIONS = [
   { value: 'economy', label: '경제/금융' },
@@ -20,12 +21,29 @@ const GoalSettingPage = () => {
       prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
     );
   };
+  // const toggleInterest = (value) => {
+  //   setInterests((prev) =>
+  //     prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
+  //   );
+  // };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ interests, dailyGoal });
-    // TODO: API 연동
+
+    try {
+      await createGoals({ interests, dailyGoal });
+      alert("목표 저장 완료!");
+    } catch (err) {
+      console.error(err);
+      alert("목표 저장 실패: 로그인 상태/서버 연결을 확인해주세요.");
+    }
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log({ interests, dailyGoal });
+  //   // TODO: API 연동
+  // };
 
   return (
     <Wrapper>

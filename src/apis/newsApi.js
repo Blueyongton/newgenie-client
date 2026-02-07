@@ -1,3 +1,4 @@
+// src/apis/newsApi.js
 import { getAuthAxios } from './axiosConfig';
 
 export const getSentenceTerms = async (
