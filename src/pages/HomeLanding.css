@@ -1,0 +1,168 @@
+/* src/pages/HomeLanding.css */
+* { box-sizing: border-box; }
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  background: #f2f4f6;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.sidebar {
+  width: 260px;
+  padding: 32px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  border-right: 1px solid #eef1f4;
+}
+
+.logo {
+  color: #3182f6;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.myPageBtn {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #eef1f4;
+  background: #fff;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  color: #4e5968;
+  font-weight: 600;
+  cursor: pointer;
+}
+.myPageDot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #d9e6ff;
+}
+
+.main {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+}
+
+.inputSection {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.headline {
+  margin: 0;
+  color: #191f28;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.inputBox {
+  width: 100%;
+  height: 72px;
+  background: #ffffff;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px 10px 14px;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.leftIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.urlInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  color: #191f28;
+}
+.urlInput::placeholder { color: #8b95a1; }
+
+.submitBtn {
+  width: 52px;
+  height: 52px;
+  border: none;
+  background: #3182f6;
+  border-radius: 50%;
+  display: grid;            /* 가운데 정렬 핵심 */
+  place-items: center;       /* 가운데 정렬 핵심 */
+  cursor: pointer;
+}
+
+.arrowIcon {
+  width: 26px;               /* 화살표 크게 */
+  height: 26px;
+  display: block;
+}
+
+.recs {
+  width: 700px;
+}
+
+.recTitle {
+  color: #333d4b;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 26px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.thumb {
+  height: 160px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #dbeafe, #eef2ff);
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #333d4b;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: #8b95a1;
+}
