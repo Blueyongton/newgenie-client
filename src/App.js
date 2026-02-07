@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from './components/layout/Header';
 import NewsReadingPage from './pages/NewsReadingPage';
 import MyPage from './pages/MyPage';
+import GoalSettingPage from './pages/GoalSettingPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/news" element={<NewsReadingPage />} />
           <Route path="/mypage" element={<MyPage />} />
+          <Route path="/goals" element={<GoalSettingPage />} />
         </Routes>
       </Main>
     </BrowserRouter>
