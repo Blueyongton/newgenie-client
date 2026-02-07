@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const NewsArticle = ({ news, onSentenceClick }) => {
@@ -23,6 +24,9 @@ const NewsArticle = ({ news, onSentenceClick }) => {
           </Sentence>
         ))}
       </Content>
+      <QuizLink to={`/quiz?articleId=${news.id}`}>
+        퀴즈 풀러가기
+      </QuizLink>
     </ArticleWrapper>
   );
 };
@@ -63,4 +67,25 @@ const Sentence = styled.p`
       background:rgb(227, 241, 255);
     }
   `}
+`;
+
+const QuizLink = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 0px 12px rgba(37, 99, 235, 0.6);
+  }
 `;
