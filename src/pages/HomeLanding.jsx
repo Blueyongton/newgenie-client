@@ -1,53 +1,57 @@
 // src/pages/HomeLanding.jsx
+import { useState } from "react";
 import "./HomeLanding.css";
+import { FiArrowRight } from "react-icons/fi";
+import { FiLink } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+
 
 export default function HomeLanding() {
+  const [url, setUrl] = useState("");
+
+  const handleSubmit = () => {
+    const trimmed = url.trim();
+    if (!trimmed) return;
+  
+    // 지금은 "로그아웃 상태"라 했으니 바로 로그인으로 보냄
+    navigate("/login");
+  };
+  
+
+  const navigate = useNavigate();
+
+
   return (
     <div className="page">
-      <aside className="sidebar">
-        <div className="logo">NewGenie</div>
-
-        <button className="myPageBtn" type="button">
-          <span className="myPageDot" />
-          <span>마이페이지</span>
-        </button>
-      </aside>
 
       <main className="main">
         <section className="inputSection">
           <h1 className="headline">어떤 기사를 요약할까요?</h1>
 
           <div className="inputBox">
-            {/* 왼쪽 별 아이콘(원하면 제거 가능) */}
-            <div className="leftIcon" aria-hidden="true">★</div>
+          <div className="leftIcon" aria-hidden="true">
+            <FiLink size={16} />
+          </div>
+
 
             <input
               className="urlInput"
               placeholder="기사 링크를 여기에 붙여넣으세요..."
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleSubmit();
+              }}
             />
 
-            {/* 오른쪽 동그란 버튼 + 화살표(SVG) */}
-            <button className="submitBtn" type="button" aria-label="요약하기">
-              <svg
-                className="arrowIcon"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 12H18"
-                  stroke="white"
-                  strokeWidth="2.6"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M13 7L18 12L13 17"
-                  stroke="white"
-                  strokeWidth="2.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <button
+                className={`submitBtn ${url.trim() ? "active" : ""}`}
+                type="button"
+                aria-label="요약하기"
+                onClick={handleSubmit}
+                disabled={!url.trim()}
+            >
+                <FiArrowRight size={30} color="black" />
             </button>
           </div>
         </section>
@@ -55,7 +59,6 @@ export default function HomeLanding() {
         <section className="recs">
           <div className="recTitle">추천 기사</div>
 
-          {/* 지금은 더미 카드(나중에 진짜 기사 API로 교체) */}
           <div className="cardGrid">
             <div className="card">
               <div className="thumb" />
