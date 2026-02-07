@@ -13,7 +13,6 @@ export default function HomeLanding() {
     const trimmed = url.trim();
     if (!trimmed) return;
   
-    // 지금은 "로그아웃 상태"라 했으니 바로 로그인으로 보냄
     navigate("/login");
   };
   
